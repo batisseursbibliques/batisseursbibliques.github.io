@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rejoindre ABBA — Formulaire d'Inscription</title>
+<meta name="description" content="Rejoignez l'Alliance des Bâtisseurs Bibliques en Action. Formulaire d'inscription en ligne. 1 000 FCFA pour devenir membre adhérent.">
+<link rel="stylesheet" href="style'.css">
+<style>
+/* Membership cards */
+.membership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 64px; }
+.mem-card {
+  background: var(--white); border-radius: 4px;
+  padding: 36px; box-shadow: var(--shadow-md);
+  position: relative; overflow: hidden;
+  transition: transform 0.2s;
+}
+.mem-card:hover { transform: translateY(-4px); }
+.mem-card.featured { background: var(--royal); }
+.mem-card-top {
+  position: absolute; top: 0; right: 0;
+  background: var(--gold); color: var(--dark);
+  padding: 4px 16px; font-size: 0.68rem;
+  font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.mem-tier {
+  font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; margin-bottom: 6px;
+}
+.mem-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem; font-weight: 700;
+  margin-bottom: 4px;
+}
+.mem-card.featured .mem-name { color: var(--white); }
+.mem-subtitle {
+  font-size: 0.83rem; color: var(--muted); margin-bottom: 24px;
+}
+.mem-card.featured .mem-subtitle { color: rgba(255,255,255,0.5); }
+.mem-price {
+  font-size: 2.2rem; font-weight: 700; color: var(--royal);
+  margin: 20px 0; display: flex; align-items: baseline; gap: 6px;
+}
+.mem-card.featured .mem-price { color: var(--gold-light); }
+.mem-price span { font-size: 0.88rem; font-weight: 400; color: var(--muted); }
+.mem-card.featured .mem-price span { color: rgba(255,255,255,0.45); }
+.mem-sep { height: 1px; background: var(--border); margin: 20px 0; }
+.mem-card.featured .mem-sep { background: rgba(255,255,255,0.12); }
+.mem-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.mem-features li { display: flex; gap: 10px; font-size: 0.87rem; align-items: flex-start; line-height: 1.5; }
+.mem-card.featured .mem-features li { color: rgba(255,255,255,0.8); }
+.mem-features li .chk { color: var(--gold); font-weight: 700; flex-shrink: 0; }
+.mem-cta {
+  display: block; width: 100%; padding: 14px 24px;
+  text-align: center; border-radius: 2px;
+  font-weight: 700; font-size: 0.85rem; letter-spacing: 0.07em; text-transform: uppercase;
+  transition: all 0.2s; cursor: pointer; border: none; font-family: 'Outfit', sans-serif;
+}
+.mem-cta.solid { background: var(--gold); color: var(--dark); }
+.mem-cta.solid:hover { background: var(--gold-light); }
+.mem-cta.outline { background: transparent; color: var(--royal); border: 1.5px solid var(--royal); }
+.mem-cta.outline:hover { background: var(--royal); color: var(--white); }
+
+/* Form section */
+.form-container {
+  max-width: 680px; margin: 0 auto;
+  background: var(--white); border-radius: 4px;
+  padding: 48px; box-shadow: var(--shadow-lg);
+}
+.form-container h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem; font-weight: 700; color: var(--royal); margin-bottom: 6px;
+}
+.form-container .form-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 32px; }
+
+.form-step {
+  background: var(--royal); color: var(--white);
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 4px 14px; border-radius: 100px;
+  display: inline-block; margin-bottom: 20px;
+}
+.form-section-title {
+  font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; margin: 24px 0 14px;
+  border-bottom: 1px solid var(--border); padding-bottom: 8px;
+}
+
+.radio-group { display: flex; flex-direction: column; gap: 12px; }
+.radio-option {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 16px; border: 1.5px solid var(--border);
+  border-radius: 3px; cursor: pointer; transition: border-color 0.2s, background 0.2s;
+}
+.radio-option:hover { border-color: var(--gold); background: var(--gold-pale); }
+.radio-option.selected { border-color: var(--gold); background: var(--gold-pale); }
+.radio-option input { margin-top: 3px; flex-shrink: 0; accent-color: var(--gold); }
+.radio-option-text strong { display: block; font-size: 0.9rem; color: var(--text); margin-bottom: 2px; }
+.radio-option-text span  { font-size: 0.78rem; color: var(--muted); }
+
+.checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.check-option {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border: 1.5px solid var(--border);
+  border-radius: 3px; cursor: pointer; font-size: 0.85rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.check-option:hover { border-color: var(--gold); background: var(--gold-pale); }
+.check-option input { accent-color: var(--gold); }
+
+.form-submit {
+  background: var(--gold); color: var(--dark);
+  width: 100%; padding: 16px 24px;
+  font-size: 0.95rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  border: none; border-radius: 2px; cursor: pointer;
+  font-family: 'Outfit', sans-serif; transition: all 0.2s;
+  margin-top: 8px;
+}
+.form-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,151,26,0.3); }
+
+.form-note {
+  text-align: center; font-size: 0.75rem; color: var(--muted);
+  margin-top: 14px; line-height: 1.6;
+}
+
+.consent-label {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  text-transform: none !important;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.consent-label input[type="checkbox"] {
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--gold);
+  width: 16px;
+  height: 16px;
+}
+
+/* Success message */
+.form-success {
+  display: none; text-align: center; padding: 40px;
+}
+.form-success .success-icon { font-size: 3.5rem; margin-bottom: 16px; }
+.form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--royal); margin-bottom: 8px; }
+.form-success p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--white); border-radius: 3px; overflow: hidden;
+  box-shadow: var(--shadow-sm); border-left: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+.faq-item:hover { border-left-color: var(--gold); }
+.faq-q {
+  padding: 18px 22px; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  font-weight: 600; font-size: 0.92rem; color: var(--text); user-select: none;
+}
+.faq-q .faq-icon { color: var(--gold); font-size: 1.2rem; transition: transform 0.25s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 22px; font-size: 0.87rem; color: var(--muted); line-height: 1.75;
+}
+.faq-item.open .faq-a { max-height: 300px; padding: 0 22px 18px; }
+
+@media (max-width: 768px) {
+  .membership-grid { grid-template-columns: 1fr; }
+  .form-container { padding: 28px 20px; }
+  .checkbox-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav id="abba-nav"></nav>
+
+<main class="page-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span><span>Rejoindre ABBA</span></div>
+      <h1>Rejoindre <span>ABBA</span></h1>
+      <p>Deux façons d'intégrer l'alliance. Quelle que soit votre situation, votre place est parmi nous.</p>
+    </div>
+  </div>
+
+  <!-- MEMBERSHIP OPTIONS -->
+  <section id="adhesion" style="background:var(--ivory);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:48px;">
+        <span class="section-eyebrow">Deux niveaux d'engagement</span>
+        <h2 class="section-title">Choisissez votre niveau</h2>
+        <div class="divider center"></div>
+        <p class="section-lead center">Que vous débutiez ou que vous soyez prêt à vous engager pleinement — ABBA a une place pour vous.</p>
+      </div>
+      <div class="membership-grid">
+        <div class="mem-card animate-up">
+          <div class="mem-tier">Niveau 1 · La porte d'entrée</div>
+          <div class="mem-name">Membre Adhérent</div>
+          <div class="mem-subtitle">Premier pas vers la transformation ABBA</div>
+          <div class="mem-sep"></div>
+          <div class="mem-price">1 000 <span>FCFA — Droit d'adhésion unique</span></div>
+          <ul class="mem-features">
+            <li><span class="chk">✓</span> Souscrire à la vision humanitaire et sociale d'ABBA</li>
+            <li><span class="chk">✓</span> Avoir 18 ans (ou 15–17 ans avec accord parental)</li>
+            <li><span class="chk">✓</span> Jouir de ses droits civiques</li>
+            <li><span class="chk">✓</span> Accès à la communauté et aux activités ABBA</li>
+            <li><span class="chk">✓</span> Voix consultative dans les décisions</li>
+            <li><span class="chk">✓</span> Carte de membre adhérent officielle</li>
+          </ul>
+          <button class="mem-cta outline" onclick="scrollToForm('adherent')">Devenir Adhérent</button>
+        </div>
+        <div class="mem-card featured animate-up">
+          <div class="mem-card-top">Objectif ultime</div>
+          <div class="mem-tier">Niveau 2 · Le Bâtisseur confirmé</div>
+          <div class="mem-name">Membre Effectif</div>
+          <div class="mem-subtitle">Le statut du Bâtisseur ABBA certifié</div>
+          <div class="mem-sep"></div>
+          <div class="mem-price">5 000 <span>FCFA — pour 12 mois complets (formation, carte et certificat inclus)</span></div>
+          <ul class="mem-features">
+            <li><span class="chk">✓</span> Chrétien né de nouveau et baptisé, ancré dans une église aux fondements bibliques</li>
+            <li><span class="chk">✓</span> Compléter le Parcours Bâtisseur 12 mois</li>
+            <li><span class="chk">✓</span> Certification officielle de Bâtisseur ABBA</li>
+            <li><span class="chk">✓</span> Carte de membre effectif permanente</li>
+            <li><span class="chk">✓</span> Intégration dans un ministère selon vos dons</li>
+            <li><span class="chk">✓</span> Coaching individualisé sur 12 mois minimum</li>
+            <li><span class="chk">✓</span> Lancement de votre micro-projet personnel</li>
+            <li><span class="chk">✓</span> Droits de vote et de proposition complets</li>
+          </ul>
+          <button class="mem-cta solid" onclick="scrollToForm('effectif')">S'inscrire au Parcours</button>
+        </div>
+      </div>
+      <p style="text-align:center; font-style:italic; margin-top:32px; color:var(--muted); font-size:1rem;">
+        Dans tous les cas, 15 jours d'observation sans engagement ni frais. Venez d'abord voir.
+      </p>
+    </div>
+  </section>
+
+  <!-- 7 ÉTAPES -->
+  <section style="background:var(--ivory);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:44px;">
+        <span class="section-eyebrow">Le chemin vers ABBA</span>
+        <h2 class="section-title">Vos 7 prochaines étapes</h2>
+        <div class="divider center"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:24px; max-width:1100px; margin:0 auto;">
+        <div style="background:var(--white); padding:24px; border-radius:12px; border:1px solid rgba(0,0,0,0.06);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold, #b8933f); line-height:1;">01</div>
+          <p style="margin-top:8px; font-weight:600;">Premier contact</p>
+          <p style="color:var(--muted); font-size:0.9rem;">Nous répondons sous 48 heures.</p>
+        </div>
+        <div style="background:var(--white); padding:24px; border-radius:12px; border:1px solid rgba(0,0,0,0.06);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold, #b8933f); line-height:1;">02</div>
+          <p style="margin-top:8px; font-weight:600;">Entretien découverte</p>
+          <p style="color:var(--muted); font-size:0.9rem;">En présentiel ou en ligne.</p>
+        </div>
+        <div style="background:var(--white); padding:24px; border-radius:12px; border:1px solid rgba(0,0,0,0.06);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold, #b8933f); line-height:1;">03</div>
+          <p style="margin-top:8px; font-weight:600;">Observation (15 jours)</p>
+          <p style="color:var(--muted); font-size:0.9rem;">Participez sans engagement ni frais.</p>
+        </div>
+        <div style="background:var(--white); padding:24px; border-radius:12px; border:1px solid rgba(0,0,0,0.06);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold, #b8933f); line-height:1;">04</div>
+          <p style="margin-top:8px; font-weight:600;">Décision d'adhésion</p>
+          <p style="color:var(--muted); font-size:0.9rem;">Adhérent ou Effectif.</p>
+        </div>
+        <div style="background:var(--white); padding:24px; border-radius:12px; border:1px solid rgba(0,0,0,0.06);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold, #b8933f); line-height:1;">05</div>
+          <p style="margin-top:8px; font-weight:600;">Paiement</p>
+          <p style="color:var(--muted); font-size:0.9rem;">1 000 ou 5 000 FCFA selon votre voie.</p>
+        </div>
+        <div style="background:var(--white); padding:24px; border-radius:12px; border:1px solid rgba(0,0,0,0.06);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold, #b8933f); line-height:1;">06</div>
+          <p style="margin-top:8px; font-weight:600;">Signature de la Charte</p>
+          <p style="color:var(--muted); font-size:0.9rem;">Engagement formel.</p>
+        </div>
+        <div style="background:var(--white); padding:24px; border-radius:12px; border:1px solid rgba(0,0,0,0.06);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold, #b8933f); line-height:1;">07</div>
+          <p style="margin-top:8px; font-weight:600;">Accueil officiel</p>
+          <p style="color:var(--muted); font-size:0.9rem;">Carte de membre + début du Parcours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section style="background:var(--white);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:44px;">
+        <span class="section-eyebrow">Inscription</span>
+        <h2 class="section-title">Formulaire d'adhésion</h2>
+        <div class="divider center"></div>
+        <p class="section-lead center">Remplissez ce formulaire et notre équipe vous contactera dans les 48 heures pour confirmer votre adhésion.</p>
+      </div>
+
+      <div class="form-container" id="inscription-form">
+        <h2>Votre Inscription à ABBA</h2>
+        <p class="form-sub">Tous les champs marqués d'un * sont obligatoires. Vos données sont confidentielles.</p>
+
+        <div style="text-align:center; padding:20px 0;">
+          <p class="form-sub" style="margin-bottom:24px;">Cliquez ci-dessous pour envoyer votre demande d'adhésion directement sur WhatsApp. Précisez-nous votre nom, votre ville et le niveau d'adhésion souhaité (Membre Adhérent, Parcours Bâtisseur, ou Partenaire), et l'équipe ABBA vous répond sous 48h.</p>
+          <a class="form-submit" style="display:inline-flex; text-decoration:none; justify-content:center;"
+            href="https://wa.me/2290141314051?text=Bonjour%20ABBA%2C%20je%20souhaite%20rejoindre%20le%20mouvement.%20Voici%20mes%20informations%20%3A%0A-%20Nom%20%3A%0A-%20Ville%20%3A%0A-%20Niveau%20d%27adh%C3%A9sion%20souhait%C3%A9%20%3A"
+            target="_blank" rel="noopener">
+            Rejoindre ABBA sur WhatsApp →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:var(--ivory);">
+    <div class="container" style="max-width:760px;">
+      <div style="text-align:center; margin-bottom:44px;">
+        <span class="section-eyebrow">Questions fréquentes</span>
+        <h2 class="section-title">Vous avez des questions ?</h2>
+        <div class="divider center"></div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Faut-il être membre d'une église pour rejoindre ABBA ? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Non. ABBA est un mouvement inter-dénominationnel ouvert à tous les croyants de toutes dénominations chrétiennes bibliques. Vous n'avez pas besoin de quitter votre église ni d'être recommandé par votre pasteur. ABBA n'est pas une église — c'est une alliance de bâtisseurs.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Quelle est la différence entre Membre Adhérent et Membre Effectif ? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Le Membre Adhérent est la porte d'entrée — il souscrit à la vision d'ABBA et participe à la communauté contre un droit d'adhésion de 1 000 FCFA. Le Membre Effectif est un bâtisseur qui a complété le Parcours Bâtisseur de 12 mois. Il détient la certification officielle ABBA, a les droits de vote complets et bénéficie de tous les privilèges de l'alliance.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Le Parcours Bâtisseur est-il accessible à quelqu'un qui travaille ? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Absolument. Le Parcours est conçu pour s'adapter à la vie active. Les séances en ligne ont lieu 2 fois par semaine en soirée à 20h30 (1h30 chacune), et il y a une rencontre présentielle le samedi une fois par mois. Vous n'avez pas besoin de sacrifier votre emploi ou vos responsabilités familiales.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Peut-on rejoindre ABBA si on est en dehors de Cotonou ? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Oui ! La formation en ligne (2 séances hebdomadaires) est accessible depuis n'importe où — au Bénin, en Afrique ou ailleurs dans le monde francophone. La rencontre présentielle mensuelle se tient actuellement à Cotonou ; notre ambition à terme (horizon 2040) est de couvrir progressivement les 77 communes du Bénin, à mesure que Dieu ouvre la voie.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Puis-je rejoindre ABBA sans faire le Parcours Bâtisseur ? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Oui, en tant que Membre Adhérent, vous pouvez rejoindre ABBA et participer à ses activités sans suivre le Parcours Bâtisseur complet. Cependant, le Parcours est fortement recommandé car c'est le chemin le plus court vers une transformation complète et le statut de Membre Effectif certifié.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Comment se passe le processus après l'envoi du formulaire ? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Après réception de votre formulaire, un membre de l'équipe ABBA vous contacte dans les 48 heures par email ou WhatsApp pour confirmer votre adhésion, vous expliquer les prochaines étapes et vous accueillir dans la communauté. L'adhésion devient effective après le règlement du droit d'adhésion de 1 000 FCFA.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Y a-t-il des frais mensuels après l'adhésion ? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Non. Le droit d'adhésion de 1 000 FCFA est unique pour le niveau Adhérent, et les 5 000 FCFA du Parcours Bâtisseur couvrent l'intégralité des 12 mois — formation, carte de membre et certificat inclus. Aucune cotisation mensuelle. Au-delà, ABBA fonctionne aussi sur le principe de la libéralité volontaire pour ceux qui souhaitent soutenir davantage la mission.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CONTACT -->
+  <div class="cta-band">
+    <div class="container">
+      <span class="section-eyebrow light">Une autre question ?</span>
+      <h2>Nous sommes là pour vous.</h2>
+      <p>Notre équipe répond à toutes vos questions par email ou WhatsApp.</p>
+      <div class="btn-group">
+        <a class="btn btn-primary btn-lg" href="mailto:lesbatisseursbibliques@gmail.com">✉ lesbatisseursbibliques@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="abba-footer"></footer>
+<script src="images.js"></script>
+<script src="nav.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof ABBA_IMAGES !== 'undefined')
+    document.getElementById('footer-logo').src = ABBA_IMAGES.logo;
+});
+
+function scrollToForm(type) {
+  document.getElementById('inscription-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(() => selectRadio(type), 600);
+}
+function selectRadio(type) {
+  document.querySelectorAll('.radio-option').forEach(el => el.classList.remove('selected'));
+  const el = document.getElementById('radio-' + type);
+  if (el) {
+    el.classList.add('selected');
+    el.querySelector('input').checked = true;
+  }
+}
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+</script>
+</body>
+</html>

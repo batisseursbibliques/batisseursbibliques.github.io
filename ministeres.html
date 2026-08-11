@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les 7 Ministères — ABBA | Alliance des Bâtisseurs Bibliques en Action</title>
+<meta name="description" content="Découvrez les 7 ministères d'ABBA : MIPS, MPS, MPO, MEA, MBEL, MAF, DPH. Trouve ta place et rejoins le mouvement de transformation holistique.">
+<link rel="stylesheet" href="style'.css">
+<style>
+/* Intro synergy */
+.synergy-row { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.synergy-icons {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 12px;
+}
+.sy-icon {
+  aspect-ratio: 1; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(201,151,26,0.2); border-radius: 6px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; transition: all 0.25s; cursor: default;
+}
+.sy-icon:hover { background: rgba(201,151,26,0.12); border-color: rgba(201,151,26,0.4); transform: scale(1.06); }
+.sy-icon span:first-child { font-size: 1.5rem; }
+.sy-icon .sy-code { font-size: 0.62rem; color: rgba(255,255,255,0.55); font-weight: 700; letter-spacing: 0.06em; }
+
+/* Ministry cards */
+.min-section { padding: 64px 0; }
+.min-section:nth-child(even) { background: var(--ivory); }
+.min-section:nth-child(odd)  { background: var(--white); }
+
+.min-layout { display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start; }
+.min-layout.reverse { grid-template-columns: 1fr 260px; }
+.min-layout.reverse .min-sidebar { order: 2; }
+.min-layout.reverse .min-body   { order: 1; }
+
+.min-sidebar {
+  background: var(--royal); color: var(--white);
+  border-radius: 4px; padding: 32px 24px; text-align: center;
+  box-shadow: var(--shadow-md); position: sticky; top: 90px;
+}
+.min-sidebar .min-big-icon { font-size: 3.5rem; margin-bottom: 14px; }
+.min-sidebar .min-code {
+  display: inline-block; background: var(--gold); color: var(--dark);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 4px 14px; border-radius: 100px;
+  margin-bottom: 14px;
+}
+.min-sidebar .min-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 12px; line-height: 1.3;
+}
+.min-sidebar .min-tagline { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+.min-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 700; color: var(--royal); margin-bottom: 10px;
+}
+.min-body .min-lead { font-size: 0.97rem; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
+.min-body h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 12px; font-weight: 700; }
+
+.min-activities {
+  list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;
+}
+.min-activities li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 0.88rem; color: var(--text); line-height: 1.55;
+  padding: 10px 14px; background: var(--ivory); border-radius: 3px;
+  border-left: 2px solid var(--gold);
+}
+.min-activities li .act-icon { flex-shrink: 0; font-size: 1rem; }
+
+.min-for-who {
+  background: var(--royal-soft); border-radius: 4px; padding: 20px 24px;
+  border: 1px solid rgba(11,44,107,0.12);
+}
+.min-for-who h4 { color: var(--royal); margin-bottom: 10px; }
+.min-for-who p { font-size: 0.87rem; color: var(--muted); line-height: 1.7; }
+
+/* Overview grid (small cards) */
+.overview-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.ov-card {
+  background: var(--white); border-radius: 4px; padding: 24px 20px;
+  box-shadow: var(--shadow-sm); border-top: 3px solid var(--gold);
+  text-align: center; transition: transform 0.2s, box-shadow 0.2s;
+}
+.ov-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.ov-icon { font-size: 2rem; margin-bottom: 10px; }
+.ov-code { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+.ov-name { font-weight: 700; color: var(--royal); font-size: 0.9rem; margin-bottom: 6px; }
+.ov-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+
+@media (max-width: 900px) {
+  .min-layout, .min-layout.reverse { grid-template-columns: 1fr; }
+  .min-layout.reverse .min-sidebar, .min-layout.reverse .min-body { order: unset; }
+  .min-sidebar { position: static; }
+  .synergy-row { grid-template-columns: 1fr; }
+  .overview-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .overview-grid { grid-template-columns: 1fr; }
+  .synergy-icons { grid-template-columns: repeat(4,1fr); }
+}
+</style>
+</head>
+<body>
+
+<nav id="abba-nav"></nav>
+
+<main class="page-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span><span>Les Ministères</span></div>
+      <h1>Les <span>7 Ministères</span> d'ABBA</h1>
+      <p>Chaque bâtisseur trouve sa place dans l'un ou plusieurs de ces ministères selon ses dons, ses passions et son appel. Ta place t'y attend.</p>
+    </div>
+  </div>
+
+  <!-- SYNERGIE -->
+  <section style="background:linear-gradient(135deg, var(--dark), var(--royal));">
+    <div class="container">
+      <div class="synergy-row">
+        <div class="animate-up">
+          <span class="section-eyebrow light">7 Ministères · 1 Vision</span>
+          <h2 class="section-title light">Une synergie au service de la transformation</h2>
+          <div class="divider"></div>
+          <p class="section-lead light" style="margin-bottom:20px;">
+            Les 7 ministères d'ABBA ne fonctionnent pas en silo. Ils travaillent en synergie permanente — chacun apportant sa contribution spécifique à l'accomplissement de la mission globale. Ensemble, ils couvrent toutes les dimensions de la vie humaine et de la société.
+          </p>
+          <div class="verse-block" style="background:rgba(255,255,255,0.06); border-left-color:var(--gold);">
+            <p style="color:rgba(255,255,255,0.85);">« Il a donné les uns comme apôtres, les autres comme prophètes, les autres comme évangélistes… »</p>
+            <cite>Éphésiens 4:11</cite>
+          </div>
+        </div>
+        <div class="synergy-icons animate-up">
+          <div class="sy-icon"><span>🙏</span><span class="sy-code">MIPS</span></div>
+          <div class="sy-icon"><span>📖</span><span class="sy-code">MPS</span></div>
+          <div class="sy-icon"><span>🛡️</span><span class="sy-code">MPO</span></div>
+          <div class="sy-icon"><span>🎭</span><span class="sy-code">MEA</span></div>
+          <div class="sy-icon"><span>❤️</span><span class="sy-code">MBEL</span></div>
+          <div class="sy-icon"><span>💼</span><span class="sy-code">MAF</span></div>
+          <div class="sy-icon"><span>🌍</span><span class="sy-code">DPH</span></div>
+          <div class="sy-icon" style="opacity:0.3; border-style:dashed;"><span>＋</span><span class="sy-code">Toi ?</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VUE D'ENSEMBLE -->
+  <section style="background:var(--ivory);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:44px;">
+        <span class="section-eyebrow">Aperçu</span>
+        <h2 class="section-title">Les 7 Ministères en un coup d'œil</h2>
+        <div class="divider center"></div>
+      </div>
+      <div class="overview-grid">
+        <div class="ov-card animate-up"><div class="ov-icon">🙏</div><div class="ov-code">MIPS</div><div class="ov-name">Intercession & Prière Stratégique</div><div class="ov-desc">Couverture spirituelle — veille, prières et combat spirituel</div></div>
+        <div class="ov-card animate-up"><div class="ov-icon">📖</div><div class="ov-code">MPS</div><div class="ov-name">Perfectionnement des Saints</div><div class="ov-desc">Formation biblique, enseignement, formation des formateurs</div></div>
+        <div class="ov-card animate-up"><div class="ov-icon">🛡️</div><div class="ov-code">MPO</div><div class="ov-name">Protection & Orientation</div><div class="ov-desc">Cure d'âme, counseling, accompagnement des vulnérables</div></div>
+        <div class="ov-card animate-up"><div class="ov-icon">🎭</div><div class="ov-code">MEA</div><div class="ov-name">Évangélisation par les Arts</div><div class="ov-desc">Musique, théâtre, danse, arts plastiques, médias</div></div>
+        <div class="ov-card animate-up"><div class="ov-icon">❤️</div><div class="ov-code">MBEL</div><div class="ov-name">Bien-être, Entraide & Libéralité</div><div class="ov-desc">Solidarité, aide aux nécessiteux, actions sociales</div></div>
+        <div class="ov-card animate-up"><div class="ov-icon">💼</div><div class="ov-code">MAF</div><div class="ov-name">Affaires & Finances</div><div class="ov-desc">Entrepreneuriat chrétien, microprojets, autonomie économique</div></div>
+        <div class="ov-card animate-up" style="grid-column: 1/-1; max-width: 340px; margin: 0 auto;"><div class="ov-icon">🌍</div><div class="ov-code">DPH</div><div class="ov-name">Direction des Pêches d'Hommes</div><div class="ov-desc">Évangélisation, mission, implantation de bases, expansion</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIPS -->
+  <section class="min-section" style="background:var(--white);">
+    <div class="container">
+      <div class="min-layout animate-up">
+        <div class="min-sidebar">
+          <div class="min-big-icon">🙏</div>
+          <div class="min-code">MIPS</div>
+          <div class="min-name">Ministère d'Intercession et de Prière Stratégique</div>
+          <div class="min-tagline">La couverture spirituelle de toute l'alliance</div>
+        </div>
+        <div class="min-body">
+          <div class="divider"></div>
+          <h2>Intercession & Prière Stratégique</h2>
+          <p class="min-lead">Toute grande œuvre commence et se soutient par la prière. Le MIPS est la fondation spirituelle invisible sur laquelle repose toute l'alliance ABBA. Ses membres sont des intercesseurs formés, des guerriers de prière qui couvrent, protègent et ouvrent des portes spirituelles pour la mission.</p>
+          <h4>Ce que nous faisons</h4>
+          <ul class="min-activities">
+            <li><span class="act-icon">🔥</span> Veillées de prière et intercession stratégique pour la vision ABBA</li>
+            <li><span class="act-icon">⚔️</span> Combat spirituel — identification et bris des forteresses</li>
+            <li><span class="act-icon">🗺️</span> Prière cartographique pour les 77 communes du Bénin</li>
+            <li><span class="act-icon">📿</span> Couverture spirituelle de chaque bâtisseur, activité et événement</li>
+            <li><span class="act-icon">🏠</span> Formation d'intercesseurs dans chaque cellule communautaire</li>
+          </ul>
+          <div class="min-for-who">
+            <h4>Ce ministère est pour toi si…</h4>
+            <p>Tu as une passion profonde pour la prière. Tu ressens souvent le besoin d'intercéder pour les autres, pour ton pays, pour ton église. Tu veux que ta vie de prière aille au-delà du personnel pour avoir un impact collectif et stratégique.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MPS -->
+  <section class="min-section" style="background:var(--ivory);">
+    <div class="container">
+      <div class="min-layout reverse animate-up">
+        <div class="min-body">
+          <div class="divider"></div>
+          <h2>Perfectionnement des Saints</h2>
+          <p class="min-lead">La Parole de Dieu est la nourriture du bâtisseur. Le MPS a pour mission de former des croyants qui connaissent vraiment la Bible, qui savent l'enseigner avec précision et qui peuvent à leur tour former d'autres formateurs — pour que la multiplication soit exponentielle.</p>
+          <h4>Ce que nous faisons</h4>
+          <ul class="min-activities">
+            <li><span class="act-icon">📖</span> Formation biblique approfondie et systématique</li>
+            <li><span class="act-icon">🎓</span> Formation de formateurs — multiplier l'impact par la transmission</li>
+            <li><span class="act-icon">📝</span> Production de supports pédagogiques et ressources de formation</li>
+            <li><span class="act-icon">🏫</span> Animation des séances hebdomadaires du Parcours Bâtisseur</li>
+            <li><span class="act-icon">📡</span> Contenu digital pour la formation à distance</li>
+          </ul>
+          <div class="min-for-who">
+            <h4>Ce ministère est pour toi si…</h4>
+            <p>Tu aimes enseigner, transmettre et former. Tu as la passion de la Parole de Dieu et le désir de voir d'autres grandir dans leur connaissance et leur pratique. Tu veux être un enseignant, un formateur, un pasteur-formateur au sein d'ABBA.</p>
+          </div>
+        </div>
+        <div class="min-sidebar">
+          <div class="min-big-icon">📖</div>
+          <div class="min-code">MPS</div>
+          <div class="min-name">Ministère de Perfectionnement des Saints</div>
+          <div class="min-tagline">Former des formateurs pour une multiplication exponentielle</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MPO -->
+  <section class="min-section" style="background:var(--white);">
+    <div class="container">
+      <div class="min-layout animate-up">
+        <div class="min-sidebar">
+          <div class="min-big-icon">🛡️</div>
+          <div class="min-code">MPO</div>
+          <div class="min-name">Ministère de Protection et d'Orientation</div>
+          <div class="min-tagline">Soigner les âmes blessées et guider ceux qui cherchent leur chemin</div>
+        </div>
+        <div class="min-body">
+          <div class="divider"></div>
+          <h2>Protection & Orientation</h2>
+          <p class="min-lead">Beaucoup de croyants portent des blessures profondes qui les empêchent de s'épanouir. Le MPO est le bras de soins d'ABBA — un espace de confidentialité, d'écoute et de guérison pour toutes les personnes vulnérables, blessées ou en perte de repères.</p>
+          <h4>Ce que nous faisons</h4>
+          <ul class="min-activities">
+            <li><span class="act-icon">💗</span> Cure d'âme individuelle et accompagnement pastoral</li>
+            <li><span class="act-icon">🧠</span> Counseling chrétien — santé émotionnelle et psychologique</li>
+            <li><span class="act-icon">👶</span> Protection et accompagnement des personnes vulnérables</li>
+            <li><span class="act-icon">🏠</span> Soutien aux familles en crise et aux individus en détresse</li>
+            <li><span class="act-icon">🔄</span> Programme de restauration et de réintégration sociale</li>
+          </ul>
+          <div class="min-for-who">
+            <h4>Ce ministère est pour toi si…</h4>
+            <p>Tu as le don d'écoute et d'empathie. Tu es à l'aise pour accompagner des personnes en difficulté. Tu veux mettre tes compétences en psychologie, en counseling ou en pastorale au service des plus fragiles de la communauté.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEA -->
+  <section class="min-section" style="background:var(--ivory);">
+    <div class="container">
+      <div class="min-layout reverse animate-up">
+        <div class="min-body">
+          <div class="divider"></div>
+          <h2>Évangélisation par les Arts</h2>
+          <p class="min-lead">L'art est l'un des langages les plus universels et les plus puissants pour toucher les cœurs. Le MEA mobilise musiciens, acteurs, danseurs, artistes et créateurs de contenu au service de l'Évangile — pour rejoindre ceux que les mots seuls ne touchent pas.</p>
+          <h4>Ce que nous faisons</h4>
+          <ul class="min-activities">
+            <li><span class="act-icon">🎵</span> Musique chrétienne — composition, production, concerts d'évangélisation</li>
+            <li><span class="act-icon">🎭</span> Théâtre et arts de la scène pour l'évangélisation</li>
+            <li><span class="act-icon">💃</span> Danse et expression corporelle au service du culte</li>
+            <li><span class="act-icon">🎨</span> Arts plastiques, illustrations et communication visuelle</li>
+            <li><span class="act-icon">📱</span> Création de contenu digital et médias pour la mission</li>
+          </ul>
+          <div class="min-for-who">
+            <h4>Ce ministère est pour toi si…</h4>
+            <p>Tu es artiste, créatif, musicien, acteur, danseur ou créateur de contenu. Tu veux utiliser ton talent pour Dieu et pour l'Évangile. Tu crois que l'art peut transformer les cœurs et ouvrir des portes que les prédications seules ne peuvent pas ouvrir.</p>
+          </div>
+        </div>
+        <div class="min-sidebar">
+          <div class="min-big-icon">🎭</div>
+          <div class="min-code">MEA</div>
+          <div class="min-name">Ministère d'Évangélisation par les Arts</div>
+          <div class="min-tagline">L'art comme arme d'évangélisation et de transformation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MBEL -->
+  <section class="min-section" style="background:var(--white);">
+    <div class="container">
+      <div class="min-layout animate-up">
+        <div class="min-sidebar">
+          <div class="min-big-icon">❤️</div>
+          <div class="min-code">MBEL</div>
+          <div class="min-name">Ministère du Bien-être, de l'Entraide et de la Libéralité</div>
+          <div class="min-tagline">La solidarité concrète au cœur de chaque communauté</div>
+        </div>
+        <div class="min-body">
+          <div class="divider"></div>
+          <h2>Bien-être, Entraide & Libéralité</h2>
+          <p class="min-lead">L'Évangile sans action sociale est incomplet. Le MBEL est le bras opérationnel de la compassion d'ABBA — des actions concrètes, visibles et mesurables au service des nécessiteux et des communautés locales.</p>
+          <h4>Ce que nous faisons</h4>
+          <ul class="min-activities">
+            <li><span class="act-icon">🤲</span> Aide humanitaire d'urgence aux familles en difficulté</li>
+            <li><span class="act-icon">🏥</span> Caravanes médicales et actions de santé communautaire</li>
+            <li><span class="act-icon">📦</span> Distribution alimentaire, vestimentaire et scolaire</li>
+            <li><span class="act-icon">🌱</span> Projets d'autonomisation des ménages précaires</li>
+            <li><span class="act-icon">💝</span> Culture de la générosité et de la libéralité biblique</li>
+          </ul>
+          <h4>Le Fonds de Grâce — Quand l'amour précède l'adhésion</h4>
+          <p>Nous aurions pu créer une belle formation et la réserver à ceux qui peuvent payer. Ce n'est pas le choix d'ABBA.</p>
+          <div class="verse-block" style="margin:20px 0;">
+            <p style="font-size:1.15rem;">« Si un frère ou une sœur sont nus et manquent de la nourriture de chaque jour, et que l'un d'entre vous leur dise : « Allez en paix ! » sans leur donner ce qui est nécessaire — à quoi cela sert-il ? »</p>
+            <cite>Jacques 2:15-16</cite>
+          </div>
+          <ul class="min-activities">
+            <li><span class="act-icon">🆘</span> <strong>Secours d'urgence</strong> — ouvert à tous, membres ou non : urgence médicale, perte d'emploi, catastrophe familiale, précarité alimentaire aiguë.</li>
+            <li><span class="act-icon">🤝</span> <strong>Accompagnement structuré</strong> — priorité aux membres en parcours : microcrédits sans intérêt, capital de démarrage, soutien entrepreneurial, prise en charge de frais de formation.</li>
+          </ul>
+          <p style="font-size:0.9rem; color:var(--muted); font-style:italic;">Le Fonds de Grâce est alimenté par les contributions volontaires des membres et géré avec transparence totale. Chaque franc engagé est rapporté au Grand Conseil.</p>
+          <div class="min-for-who">
+            <h4>Ce ministère est pour toi si…</h4>
+            <p>Tu as le cœur tourné vers les autres. Tu es ému par la souffrance des gens autour de toi et tu veux agir concrètement. Tu crois que l'amour pratique est l'une des preuves les plus puissantes de la réalité de Dieu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAF -->
+  <section class="min-section" style="background:var(--ivory);">
+    <div class="container">
+      <div class="min-layout reverse animate-up">
+        <div class="min-body">
+          <div class="divider"></div>
+          <h2>Affaires & Finances</h2>
+          <p class="min-lead">Dieu n'a pas peur de l'argent — il veut que ses enfants soient de bons intendants et des créateurs de richesse au service du Royaume. Le MAF accompagne chaque bâtisseur dans la création de son activité, la gestion de ses finances et la construction de son autonomie économique.</p>
+          <h4>Ce que nous faisons</h4>
+          <ul class="min-activities">
+            <li><span class="act-icon">🚀</span> Accompagnement au lancement de microprojets et d'entreprises</li>
+            <li><span class="act-icon">💰</span> Formation en gestion financière, épargne et investissement</li>
+            <li><span class="act-icon">🤝</span> Mise en réseau des entrepreneurs bâtisseurs</li>
+            <li><span class="act-icon">📊</span> Ateliers pratiques : business plan, marketing, comptabilité</li>
+            <li><span class="act-icon">🏭</span> Développement d'entreprises sociales et stratégiques d'ABBA</li>
+          </ul>
+          <div class="min-for-who">
+            <h4>Ce ministère est pour toi si…</h4>
+            <p>Tu as l'âme d'un entrepreneur ou d'un gestionnaire. Tu veux créer de la valeur, générer des revenus et sortir de la dépendance économique. Tu crois qu'un chrétien prospère a plus de capacité à impacter que celui qui est dans le besoin.</p>
+          </div>
+        </div>
+        <div class="min-sidebar">
+          <div class="min-big-icon">💼</div>
+          <div class="min-code">MAF</div>
+          <div class="min-name">Ministère des Affaires et des Finances</div>
+          <div class="min-tagline">Entrepreneuriat chrétien et autonomie économique</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPH -->
+  <section class="min-section" style="background:var(--white);">
+    <div class="container">
+      <div class="min-layout animate-up">
+        <div class="min-sidebar">
+          <div class="min-big-icon">🌍</div>
+          <div class="min-code">DPH</div>
+          <div class="min-name">Direction des Pêches d'Hommes</div>
+          <div class="min-tagline">Évangélisation, mission et expansion nationale & internationale</div>
+        </div>
+        <div class="min-body">
+          <div class="divider"></div>
+          <h2>Direction des Pêches d'Hommes</h2>
+          <p class="min-lead">La mission d'ABBA ne s'arrête pas à ses membres actuels. Le DPH est le moteur de l'expansion — celui qui s'assure qu'ABBA atteint de nouvelles personnes, de nouveaux territoires, de nouvelles nations. C'est la direction de la croissance missionnaire d'ABBA.</p>
+          <h4>Ce que nous faisons</h4>
+          <ul class="min-activities">
+            <li><span class="act-icon">📣</span> Évangélisation de proximité et campagnes d'outreach</li>
+            <li><span class="act-icon">🏗️</span> Implantation de nouvelles bases ABBA dans les communes</li>
+            <li><span class="act-icon">🏠</span> Lancement de cellules communautaires et d'Assemblées de Maison</li>
+            <li><span class="act-icon">✈️</span> Mission nationale et internationale — au-delà du Bénin</li>
+            <li><span class="act-icon">📱</span> Stratégie digitale d'évangélisation et de recrutement</li>
+          </ul>
+          <div class="min-for-who">
+            <h4>Ce ministère est pour toi si…</h4>
+            <p>Tu as un cœur pour les perdus. Tu ressens le feu de l'Évangile et le désir d'aller vers ceux qui ne connaissent pas encore Christ. Tu veux être un pionnier — planter, lancer, étendre et multiplier la présence d'ABBA dans tout le Bénin et au-delà.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="container">
+      <span class="section-eyebrow light">Ta place t'attend</span>
+      <h2>Dans quel ministère te reconnais-tu ?</h2>
+      <p>Peu importe tes dons, ta personnalité ou ton passé — ABBA a un ministère fait pour toi. La première étape, c'est de rejoindre l'alliance.</p>
+      <div class="btn-group">
+        <a class="btn btn-primary btn-lg" href="rejoindre.html">Rejoindre ABBA</a>
+        <a class="btn btn-outline-light btn-lg" href="parcours.html">Voir le Parcours →</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="abba-footer"></footer>
+<script src="images.js"></script>
+<script src="nav.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof ABBA_IMAGES !== 'undefined')
+    document.getElementById('footer-logo').src = ABBA_IMAGES.logo;
+});
+</script>
+</body>
+</html>

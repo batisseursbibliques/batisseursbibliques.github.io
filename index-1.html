@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog & Actualités — ABBA | Alliance des Bâtisseurs Bibliques en Action</title>
+<meta name="description" content="Articles, témoignages et actualités d'ABBA. Découvrez les enseignements, les réflexions et les ressources pour votre transformation.">
+<link rel="stylesheet" href="../style.css">
+<style>
+.blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+.blog-card {
+  background: var(--white); border-radius: 4px; overflow: hidden;
+  box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.blog-card-img {
+  height: 180px; background: linear-gradient(135deg, var(--royal), var(--royal-mid));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; position: relative; overflow: hidden;
+}
+.blog-card-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3) 100%);
+}
+.blog-card-cat {
+  position: absolute; top: 14px; left: 14px; z-index: 1;
+  background: var(--gold); color: var(--dark);
+  padding: 3px 12px; border-radius: 100px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.blog-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.blog-card-meta { font-size: 0.72rem; color: var(--muted); margin-bottom: 10px; }
+.blog-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-weight: 700; color: var(--royal);
+  margin-bottom: 10px; line-height: 1.3;
+}
+.blog-card-excerpt { font-size: 0.83rem; color: var(--muted); line-height: 1.65; flex: 1; margin-bottom: 18px; }
+.blog-card-link {
+  font-size: 0.78rem; font-weight: 700; color: var(--gold);
+  letter-spacing: 0.07em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 5px;
+  transition: gap 0.2s;
+}
+.blog-card:hover .blog-card-link { gap: 9px; }
+
+/* Featured post */
+.blog-featured {
+  background: var(--white); border-radius: 4px; overflow: hidden;
+  box-shadow: var(--shadow-md); display: grid; grid-template-columns: 1fr 1fr;
+  margin-bottom: 48px;
+}
+.blog-featured-img {
+  background: linear-gradient(135deg, var(--dark), var(--royal));
+  min-height: 320px; display: flex; align-items: center; justify-content: center;
+  font-size: 5rem; position: relative;
+}
+.blog-featured-body { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+.featured-tag {
+  display: inline-block; background: var(--gold-pale); color: var(--gold);
+  padding: 4px 14px; border-radius: 100px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.blog-featured-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem; font-weight: 700; color: var(--royal);
+  margin-bottom: 12px; line-height: 1.2;
+}
+.blog-featured-excerpt { font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 24px; }
+
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns: 1fr 1fr; }
+  .blog-featured { grid-template-columns: 1fr; }
+}
+@media (max-width: 580px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav id="abba-nav"></nav>
+
+<main class="page-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Accueil</a><span>/</span><span>Blog</span></div>
+      <h1>Blog & <span>Actualités</span></h1>
+      <p>Enseignements, réflexions, témoignages et ressources pour votre croissance et votre transformation.</p>
+    </div>
+  </div>
+
+  <section style="background:var(--ivory);">
+    <div class="container">
+
+      <!-- Article à la une -->
+      <div style="margin-bottom: 20px;">
+        <span class="section-eyebrow">Article à la une</span>
+      </div>
+      <div class="blog-featured animate-up">
+        <div class="blog-featured-img">🏗️</div>
+        <div class="blog-featured-body">
+          <span class="featured-tag">⭐ À la une</span>
+          <h2 class="blog-featured-title">Qu'est-ce qu'un Bâtisseur ABBA ? Comprendre notre vision de l'homme complet</h2>
+          <p class="blog-featured-excerpt">
+            Être chrétien ne suffit pas si on est spirituellement fort mais économiquement fragile. ABBA défend une vision de l'être humain complet — équilibré dans 8 dimensions essentielles. Découvrez ce que signifie vraiment être un Bâtisseur ABBA et pourquoi cette vision change tout.
+          </p>
+          <div style="font-size:0.75rem; color:var(--muted); margin-bottom:20px;">📅 Mars 2025 · 7 min de lecture · Catégorie : Vision ABBA</div>
+          <a class="btn btn-primary" href="article-batisseur-abba.html">Lire l'article →</a>
+        </div>
+      </div>
+
+      <!-- Articles grid -->
+      <div style="margin-bottom: 20px;">
+        <span class="section-eyebrow">Articles récents</span>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card animate-up">
+          <div class="blog-card-img">
+            <span class="blog-card-cat">Formation</span>
+            🧠
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">📅 Février 2025 · 5 min de lecture</div>
+            <h3 class="blog-card-title">Les 8 dimensions de l'Homme Fait : Éphésiens 4 au cœur de l'approche ABBA</h3>
+            <p class="blog-card-excerpt">Pourquoi 8 dimensions ? Parce que Dieu a créé l'être humain dans toute sa complexité. Découvrez chaque dimension et comment elles s'interconnectent.</p>
+            <a class="blog-card-link" href="article-8-dimensions.html">Lire la suite →</a>
+          </div>
+        </div>
+
+        <div class="blog-card animate-up">
+          <div class="blog-card-img">
+            <span class="blog-card-cat">Témoignage</span>
+            🙏
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">📅 À venir · Bientôt disponible</div>
+            <h3 class="blog-card-title">Comment la guérison intérieure a transformé ma relation avec l'argent</h3>
+            <p class="blog-card-excerpt">Bientôt : le témoignage d'un bâtisseur qui a découvert que ses blocages financiers venaient d'une blessure de rejet non résolue.</p>
+            <span class="blog-card-link" style="color:var(--muted); cursor:default;">Bientôt disponible</span>
+          </div>
+        </div>
+
+        <div class="blog-card animate-up">
+          <div class="blog-card-img">
+            <span class="blog-card-cat">Entrepreneuriat</span>
+            💼
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">📅 À venir · Bientôt disponible</div>
+            <h3 class="blog-card-title">Chrétien et entrepreneur : 5 principes bibliques pour bâtir une activité qui dure</h3>
+            <p class="blog-card-excerpt">Bientôt : les bases de l'entrepreneuriat chrétien selon les principes du ministère MAF d'ABBA.</p>
+            <span class="blog-card-link" style="color:var(--muted); cursor:default;">Bientôt disponible</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div style="margin-top:56px; text-align:center; background:var(--white); padding:48px 40px; border-radius:4px; box-shadow:var(--shadow-sm);" class="animate-up">
+        <div style="font-size:2.5rem; margin-bottom:16px;">📬</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:700; color:var(--royal); margin-bottom:8px;">Le blog grandit avec la communauté</h3>
+        <p style="color:var(--muted); font-size:0.9rem; max-width:500px; margin:0 auto 24px; line-height:1.75;">
+          Nous publions régulièrement de nouveaux articles — enseignements, témoignages, ressources pratiques. Rejoignez ABBA pour être parmi les premiers informés.
+        </p>
+        <a class="btn btn-primary" href="../rejoindre.html">Rejoindre ABBA pour rester informé</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer id="abba-footer"></footer>
+<script src="../images.js"></script>
+<script src="../nav.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof ABBA_IMAGES !== 'undefined')
+    document.getElementById('footer-logo').src = ABBA_IMAGES.logo;
+});
+</script>
+</body>
+</html>

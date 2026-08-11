@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contactez-nous — ABBA | Alliance des Bâtisseurs Bibliques en Action</title>
+<meta name="description" content="Contactez l'Alliance des Bâtisseurs Bibliques en Action. Questions sur le Parcours Bâtisseur, demande d'information ou partage de vision.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style'.css">
+<style>
+
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS & RESET
+═══════════════════════════════════════════ */
+:root {
+  --royal:       #0b2c6b;
+  --royal-mid:   #0d3580;
+  --royal-soft:  #e8edf7;
+  --gold:        #c9971a;
+  --gold-light:  #e8b84b;
+  --dark:        #0a1628;
+  --white:       #ffffff;
+  --ivory:       #f7f5ef;
+  --text:        #1a1a2e;
+  --muted:       #6b7280;
+  --border:      rgba(11,44,107,0.12);
+  --shadow-sm:   0 1px 4px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+  --shadow-lg:   0 12px 40px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  color: var(--text);
+  background: var(--ivory);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a   { text-decoration: none; color: inherit; }
+
+/* ═══════════════════════════════════════════
+   LAYOUT UTILITIES
+═══════════════════════════════════════════ */
+.container { width:100%; max-width:1160px; margin:0 auto; padding:0 32px; }
+section { padding: 88px 0; }
+
+.section-eyebrow {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--gold); margin-bottom: 12px;
+}
+.section-eyebrow.light { color: var(--gold-light); }
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700; color: var(--royal); line-height: 1.2; margin-bottom: 12px;
+}
+.section-title.light { color: var(--white); }
+
+.divider {
+  width: 40px; height: 3px;
+  background: var(--gold); margin: 16px 0 24px;
+  border-radius: 2px;
+}
+.divider.center { margin: 16px auto 24px; }
+
+/* ═══════════════════════════════════════════
+   PAGE HERO
+═══════════════════════════════════════════ */
+.page-hero {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--royal) 60%, #1a4499 100%);
+  padding: 140px 0 80px; position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,151,26,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(11,44,107,0.4) 0%, transparent 60%);
+}
+.page-hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,151,26,0.3), transparent);
+}
+.page-hero .container { position: relative; z-index: 1; }
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-bottom: 28px;
+}
+.breadcrumb a { color: var(--gold-light); transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--white); }
+.breadcrumb span { color: rgba(255,255,255,0.3); }
+.page-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px;
+}
+.page-hero h1 span { color: var(--gold-light); font-style: italic; }
+.page-hero p {
+  font-size: 1rem; color: rgba(255,255,255,0.65);
+  max-width: 560px; line-height: 1.75;
+}
+
+/* ═══════════════════════════════════════════
+   CTA BAND
+═══════════════════════════════════════════ */
+.cta-band {
+  background: linear-gradient(135deg, var(--dark), var(--royal));
+  padding: 72px 0; text-align: center; position: relative; overflow: hidden;
+}
+.cta-band::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 100% at 50% 50%, rgba(201,151,26,0.08) 0%, transparent 70%);
+}
+.cta-band .container { position: relative; z-index: 1; }
+.cta-band h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 700; color: var(--white); margin-bottom: 12px;
+}
+.cta-band p {
+  color: rgba(255,255,255,0.6); font-size: 0.95rem;
+  max-width: 520px; margin: 0 auto 32px; line-height: 1.75;
+}
+.btn-group {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  border-radius: 3px; font-weight: 700; font-size: 0.85rem;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  transition: all 0.2s; cursor: pointer; border: none; font-family: inherit;
+}
+.btn-lg { padding: 14px 32px; font-size: 0.88rem; }
+.btn-primary { background: var(--gold); color: var(--dark); }
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,151,26,0.3); }
+.btn-outline-light { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); }
+.btn-outline-light:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); transform: translateY(-2px); }
+
+
+/* ═══════════════════════════════════════════
+   CONTACT — STYLES SPÉCIFIQUES
+═══════════════════════════════════════════ */
+.contact-layout {
+  display: grid; grid-template-columns: 1fr 1.65fr;
+  gap: 56px; align-items: start;
+}
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+
+.info-card {
+  background: var(--white); border-radius: 4px; padding: 22px 26px;
+  border-left: 3px solid var(--gold); box-shadow: var(--shadow-sm);
+  display: flex; align-items: flex-start; gap: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.info-card:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+.info-card .ic-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.info-card .ic-body h4 {
+  font-size: 0.75rem; font-weight: 700; color: var(--royal);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;
+}
+.info-card .ic-body p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
+
+.vision-card {
+  background: linear-gradient(135deg, var(--royal), #1a4499);
+  border-radius: 4px; padding: 28px 30px; color: var(--white);
+  box-shadow: var(--shadow-md); position: relative; overflow: hidden;
+}
+.vision-card::before {
+  content: '\201C'; position: absolute; top: -10px; right: 20px;
+  font-family: 'Cormorant Garamond', serif; font-size: 8rem;
+  color: rgba(201,151,26,0.12); line-height: 1; pointer-events: none;
+}
+.vision-card h4 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
+  font-weight: 700; font-style: italic; color: var(--gold-light);
+  margin-bottom: 12px; position: relative;
+}
+.vision-card p { font-size: 0.84rem; color: rgba(255,255,255,0.68); line-height: 1.8; position: relative; }
+
+/* ── Formulaire ── */
+.contact-form-wrap {
+  background: var(--white); border-radius: 4px; padding: 44px 48px;
+  box-shadow: var(--shadow-lg); border-top: 4px solid var(--gold);
+}
+.form-header { margin-bottom: 32px; }
+.form-header h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.65rem;
+  font-weight: 700; color: var(--royal); margin-bottom: 8px;
+}
+.form-header p { font-size: 0.84rem; color: var(--muted); line-height: 1.7; }
+
+.form-section-label {
+  font-size: 0.68rem; font-weight: 700; color: var(--gold);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 20px; padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201,151,26,0.2);
+}
+
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+.field-full { margin-bottom: 18px; }
+.field-group { display: flex; flex-direction: column; }
+.field-group label {
+  font-size: 0.7rem; font-weight: 700; color: var(--royal);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 7px;
+}
+.field-group label .req { color: var(--gold); margin-left: 2px; }
+.field-group input,
+.field-group textarea {
+  background: var(--ivory); border: 1.5px solid rgba(11,44,107,0.12);
+  border-radius: 3px; padding: 11px 15px; font-size: 0.88rem;
+  color: var(--text); font-family: 'Jost', sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  outline: none; width: 100%;
+}
+.field-group input::placeholder,
+.field-group textarea::placeholder { color: rgba(0,0,0,0.28); }
+.field-group input:focus,
+.field-group textarea:focus {
+  border-color: var(--royal);
+  box-shadow: 0 0 0 3px rgba(11,44,107,0.08);
+  background: var(--white);
+}
+.field-group input.error,
+.field-group textarea.error {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.08);
+}
+.field-group textarea { resize: vertical; min-height: 148px; line-height: 1.7; }
+
+.form-submit-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; margin-top: 30px; padding-top: 26px;
+  border-top: 1px solid rgba(11,44,107,0.08);
+}
+.form-note { font-size: 0.76rem; color: var(--muted); flex: 1; line-height: 1.6; }
+
+.btn-submit {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--royal); color: var(--white); border: none;
+  border-radius: 3px; padding: 13px 32px;
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  font-family: 'Jost', sans-serif; white-space: nowrap; flex-shrink: 0;
+}
+.btn-submit:hover { background: var(--royal-mid); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(11,44,107,0.25); }
+.btn-submit:active { transform: translateY(0); }
+.btn-submit .arrow { transition: transform 0.2s; }
+.btn-submit:hover .arrow { transform: translateX(4px); }
+.btn-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+
+/* Succès */
+.form-success { display: none; text-align: center; padding: 48px 20px; }
+.form-success .s-icon { font-size: 3.5rem; margin-bottom: 18px; animation: pop 0.5s ease; }
+@keyframes pop { 0%{transform:scale(0.5);opacity:0;} 80%{transform:scale(1.1);} 100%{transform:scale(1);opacity:1;} }
+.form-success h4 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.7rem;
+  font-weight: 700; color: var(--royal); margin-bottom: 12px;
+}
+.form-success p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; max-width: 380px; margin: 0 auto; }
+
+/* Animate on scroll */
+.animate-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.animate-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; } }
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 36px; }
+  .contact-form-wrap { padding: 30px 26px; }
+  .form-submit-row { flex-direction: column; align-items: stretch; }
+  .btn-submit { justify-content: center; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+}
+@media (max-width: 640px) {
+  .container { padding: 0 20px; }
+  section { padding: 64px 0; }
+  .page-hero { padding: 120px 0 64px; }
+  .field-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+@keyframes spin { from{transform:rotate(0deg);}to{transform:rotate(360deg);} }
+</style>
+</head>
+<body>
+
+<nav id="abba-nav"></nav>
+
+<main style="padding-top:68px;">
+
+  <!-- ══════════════════════════════════
+       PAGE HERO
+  ══════════════════════════════════ -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span>/</span>
+        <span>Contactez-nous</span>
+      </div>
+      <h1>Contactez<br><span>l'Alliance ABBA</span></h1>
+      <p>Une question sur le Parcours Bâtisseur, un désir de rejoindre la communauté, ou simplement envie de partager votre vision ? Nous sommes à votre écoute.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SECTION CONTACT
+  ══════════════════════════════════ -->
+  <section style="background:var(--ivory);">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Colonne gauche — infos -->
+        <div class="contact-info">
+          <div class="animate-up">
+            <span class="section-eyebrow">Nous trouver</span>
+            <h2 class="section-title" style="font-size:1.9rem;">Parlons<br>ensemble</h2>
+            <div class="divider"></div>
+            <p style="font-size:0.9rem;color:var(--muted);line-height:1.8;margin-bottom:8px;">
+              L'équipe ABBA est disponible pour répondre à toutes vos questions. Chaque message est lu avec attention et soin.
+            </p>
+          </div>
+
+          <div class="info-card animate-up">
+            <div class="ic-icon">📍</div>
+            <div class="ic-body">
+              <h4>Localisation</h4>
+              <p>Carré 845 Minontchou, Maison HOUEKIN Zossou<br>2ème Arrondissement, Cotonou — République du Bénin</p>
+            </div>
+          </div>
+
+          <div class="info-card animate-up">
+            <div class="ic-icon">📱</div>
+            <div class="ic-body">
+              <h4>WhatsApp / Téléphone</h4>
+              <p>01 62 62 77 13 · 01 97 58 83 98 · 01 97 58 43 89<br>01 95 96 04 42 · 01 41 31 40 51<br>Disponible en semaine · 8h–20h</p>
+            </div>
+          </div>
+
+          <div class="info-card animate-up">
+            <div class="ic-icon">✉️</div>
+            <div class="ic-body">
+              <h4>Adresse e-mail</h4>
+              <p>lesbatisseursbibliques@gmail.com<br>Réponse sous 48h ouvrées</p>
+            </div>
+          </div>
+
+          <div class="info-card animate-up">
+            <div class="ic-icon">⛪</div>
+            <div class="ic-body">
+              <h4>Rencontres présentielles</h4>
+              <p>Chaque samedi · 1 fois/mois<br>Lieu communiqué aux membres inscrits</p>
+            </div>
+          </div>
+
+          <div class="vision-card animate-up">
+            <h4>« Bâtisseurs pour transformer. »</h4>
+            <p>ABBA est une communauté chrétienne engagée dans la formation holistique et la transformation sociale au Bénin et au-delà. Chaque message reçu est traité avec le soin qu'il mérite.</p>
+          </div>
+        </div>
+
+        <!-- Colonne droite — formulaire -->
+        <div class="contact-form-wrap animate-up">
+          <div class="form-header">
+            <h3>Envoyez-nous un message</h3>
+            <p>Tous les champs marqués d'un <strong style="color:var(--gold);">*</strong> sont obligatoires. Vos données restent confidentielles et ne seront jamais partagées.</p>
+          </div>
+
+          <div style="text-align:center; padding:20px 0;">
+            <p style="margin-bottom:24px; color:var(--muted);">Cliquez ci-dessous pour nous écrire directement sur WhatsApp. L'équipe ABBA vous répond dans les meilleurs délais.</p>
+            <a class="btn-submit" style="display:inline-flex; text-decoration:none;"
+              href="https://wa.me/2290141314051?text=Bonjour%20ABBA%2C%20je%20vous%20contacte%20depuis%20le%20site%20internet."
+              target="_blank" rel="noopener">
+              Discuter sur WhatsApp <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       CTA BAND
+  ══════════════════════════════════ -->
+  <div class="cta-band">
+    <div class="container">
+      <span class="section-eyebrow light">Rejoindre ABBA</span>
+      <h2>Prêt à devenir bâtisseur ?</h2>
+      <p>Le Parcours Bâtisseur 12 Mois vous attend. Une formation complète, un coaching personnalisé, une communauté engagée.</p>
+      <div class="btn-group">
+        <a class="btn btn-primary btn-lg" href="rejoindre.html">S'inscrire au Parcours</a>
+        <a class="btn btn-outline-light btn-lg" href="parcours.html">Découvrir le Parcours →</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="abba-footer"></footer>
+<script src="images.js"></script>
+<script src="nav.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof ABBA_IMAGES !== 'undefined')
+    document.getElementById('footer-logo').src = ABBA_IMAGES.logo;
+});
+</script>
+</body>
+</html>

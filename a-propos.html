@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — ABBA | Alliance des Bâtisseurs Bibliques en Action</title>
+<meta name="description" content="Découvrez l'identité, la vision, la mission et les valeurs d'ABBA — mouvement chrétien de transformation holistique au Bénin, légalement reconnu.">
+<link rel="stylesheet" href="style'.css">
+<style>
+/* Identity grid */
+.identity-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 36px 0; }
+.id-col { background: var(--ivory); padding: 28px; border-radius: 4px; }
+.id-col h4 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.id-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.id-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; line-height: 1.5; }
+.id-list .no  { color: #d32f2f; font-weight: 700; flex-shrink: 0; }
+.id-list .yes { color: #2e7d32; font-weight: 700; flex-shrink: 0; }
+
+/* Values */
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.val-card {
+  background: var(--white); border-radius: 4px;
+  padding: 28px 22px; text-align: center;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.val-card:hover { border-bottom-color: var(--gold); transform: translateY(-5px); }
+.val-icon { font-size: 2rem; margin-bottom: 12px; }
+.val-name { font-weight: 700; color: var(--royal); font-size: 0.95rem; margin-bottom: 6px; }
+.val-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+/* Vision */
+.vision-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.v-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(201,151,26,0.2);
+  padding: 30px; border-radius: 4px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.v-card:hover { background: rgba(201,151,26,0.1); border-color: rgba(201,151,26,0.4); }
+.v-card-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--gold-light); }
+.v-card-title { font-weight: 600; color: var(--white); font-size: 0.95rem; margin: 6px 0; }
+.v-card-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+/* Légal */
+.legal-box {
+  background: var(--royal-soft); border: 1px solid rgba(11,44,107,0.15);
+  border-radius: 4px; padding: 28px 32px;
+  display: flex; align-items: flex-start; gap: 20px;
+}
+.legal-box .legal-icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+.legal-box h4 { font-size: 0.85rem; font-weight: 700; color: var(--royal); margin-bottom: 6px; }
+.legal-box p  { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
+
+@media (max-width: 768px) {
+  .identity-cols, .values-grid, .vision-cards { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav id="abba-nav"></nav>
+
+<main class="page-content">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span><span>À propos</span></div>
+      <h1>À propos <span>d'ABBA</span></h1>
+      <p>Identité, vision, mission, valeurs, légalité — tout ce que vous devez savoir sur l'Alliance des Bâtisseurs Bibliques en Action.</p>
+    </div>
+  </div>
+
+  <!-- IDENTITE -->
+  <section style="background:var(--white);">
+    <div class="container">
+      <span class="section-eyebrow">Notre Identité</span>
+      <h2 class="section-title">Qui sommes-nous vraiment ?</h2>
+      <div class="divider"></div>
+      <p class="section-lead" style="margin-bottom:0;">
+        ABBA — Alliance des Bâtisseurs Bibliques en Action — est un mouvement chrétien de transformation holistique. Nous réunissons des croyants de toutes dénominations chrétiennes bibliques autour d'une vision commune : transformer des vies entières pour impacter positivement la société béninoise et au-delà.
+      </p>
+
+      <div class="identity-cols animate-up">
+        <div class="id-col">
+          <h4>❌ Nous ne sommes pas</h4>
+          <ul class="id-list">
+            <li><span class="no">✗</span> Une église ou une dénomination</li>
+            <li><span class="no">✗</span> Une organisation politique</li>
+            <li><span class="no">✗</span> Une secte ou un mouvement œcuménique</li>
+            <li><span class="no">✗</span> Une association à but lucratif</li>
+          </ul>
+        </div>
+        <div class="id-col">
+          <h4>✅ Nous sommes</h4>
+          <ul class="id-list">
+            <li><span class="yes">✓</span> Un mouvement de transformation holistique</li>
+            <li><span class="yes">✓</span> Une alliance de chrétiens libres et engagés</li>
+            <li><span class="yes">✓</span> Un catalyseur de destinées</li>
+            <li><span class="yes">✓</span> Une communauté de bâtisseurs au service de la société</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="verse-block animate-up" style="max-width:640px;">
+        <p>« Présenter à Dieu tout homme devenu parfait en Christ »</p>
+        <cite>Colossiens 1:28 — Verset fondateur d'ABBA</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- À QUI S'ADRESSE ABBA — 3 PORTRAITS -->
+  <section id="portraits" style="background:var(--ivory);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:44px;" class="animate-up">
+        <span class="section-eyebrow">Une conviction, pas une organisation</span>
+        <h2 class="section-title">À qui s'adresse ABBA ?</h2>
+        <div class="divider center"></div>
+        <p class="section-lead" style="max-width:680px; margin:16px auto 0;">
+          ABBA n'est pas simplement une organisation pour les gens qui ont des problèmes. C'est une alliance pour ceux qui ont décidé d'aller plus loin. Trois portraits se reconnaissent dans notre vision.
+        </p>
+      </div>
+      <div class="values-grid">
+        <div class="val-card animate-up">
+          <div class="val-icon">🙏</div>
+          <div class="val-name">Fervent spirituellement, fragile économiquement</div>
+          <div class="val-desc">Tu as une vraie vie de prière, tu connais la Parole — mais tes finances et ton projet professionnel ne tiennent pas. ABBA te dit que ta foi et ta gestion sont la même discipline.</div>
+        </div>
+        <div class="val-card animate-up">
+          <div class="val-icon">💼</div>
+          <div class="val-name">Accompli à l'extérieur, brisé à l'intérieur</div>
+          <div class="val-desc">Un poste, un revenu, une réputation — mais quelque chose est brisé ou vide à l'intérieur. ABBA t'aide à guérir ce que le succès n'a pas atteint.</div>
+        </div>
+        <div class="val-card animate-up">
+          <div class="val-icon">🧭</div>
+          <div class="val-name">Stable financièrement, vide spirituellement</div>
+          <div class="val-desc">Tu n'es pas dans le besoin, mais il te manque un sens, une direction. ABBA te reconnecte à une vision plus grande que toi.</div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:32px; color:var(--muted); font-style:italic;">
+        Quel que soit le portrait qui te ressemble, le problème est le même : une vie en morceaux. Et la réponse est la même : une vie complète est possible.
+      </p>
+    </div>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section style="background:var(--ivory);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;" class="animate-up">
+        <div>
+          <span class="section-eyebrow">Notre Vision</span>
+          <h2 class="section-title" style="font-size:1.8rem;">Ce que nous voulons voir</h2>
+          <div class="divider"></div>
+          <div class="verse-block">
+            <p>« Voir chaque être humain jouir des bonnes grâces de Dieu — santé, éducation, profession, finance, famille, foi. »</p>
+            <cite>Vision d'ABBA</cite>
+          </div>
+          <p style="margin-top:20px; color:var(--muted); font-size:0.9rem; line-height:1.8;">
+            ABBA croit que la vie chrétienne ne se limite pas au dimanche. Elle doit irriguer chaque dimension de l'existence humaine — le foyer, le travail, les finances, la santé, les relations — jusqu'à ce que chaque bâtisseur soit réellement complet.
+          </p>
+        </div>
+        <div>
+          <span class="section-eyebrow">Notre Mission</span>
+          <h2 class="section-title" style="font-size:1.8rem;">Ce que nous faisons concrètement</h2>
+          <div class="divider"></div>
+          <p style="color:var(--muted); font-size:0.9rem; line-height:1.8; margin-bottom:18px;">
+            Libérer les individus de toute forme d'oppression — spirituelle, sociale ou économique — en les formant et les accompagnant vers une pleine intégration et réussite dans la société.
+          </p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:10px; font-size:0.88rem; color:var(--text);">🙏 <span>Former des disciples de Christ authentiques et complets</span></li>
+            <li style="display:flex; gap:10px; font-size:0.88rem; color:var(--text);">💼 <span>Outiller chaque membre pour son autonomie professionnelle et financière</span></li>
+            <li style="display:flex; gap:10px; font-size:0.88rem; color:var(--text);">🌍 <span>Déployer des bâtisseurs dans toutes les communes du Bénin</span></li>
+            <li style="display:flex; gap:10px; font-size:0.88rem; color:var(--text);">❤️ <span>Créer des cellules communautaires d'entraide et de transformation</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALEURS -->
+  <section style="background:var(--white);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:48px;" class="animate-up">
+        <span class="section-eyebrow">Ce qui nous guide</span>
+        <h2 class="section-title">Nos Valeurs Fondamentales</h2>
+        <div class="divider center"></div>
+      </div>
+      <div class="values-grid">
+        <div class="val-card animate-up">
+          <div class="val-icon">🙏</div>
+          <div class="val-name">Foi Authentique</div>
+          <div class="val-desc">Relation personnelle avec Jésus-Christ et vie ancrée dans la Parole de Dieu. Pas une religion de façade, mais une foi vécue au quotidien.</div>
+        </div>
+        <div class="val-card animate-up">
+          <div class="val-icon">❤️</div>
+          <div class="val-name">Amour Pratique</div>
+          <div class="val-desc">Service désintéressé, solidarité active et compassion envers tous. L'amour que nous prêchons doit se voir dans nos actes concrets.</div>
+        </div>
+        <div class="val-card animate-up">
+          <div class="val-icon">⭐</div>
+          <div class="val-name">Excellence</div>
+          <div class="val-desc">Qualité et professionnalisme dans tout ce que nous faisons. Dieu mérite le meilleur de nous — dans la formation comme dans le service.</div>
+        </div>
+        <div class="val-card animate-up">
+          <div class="val-icon">🤝</div>
+          <div class="val-name">Intégrité</div>
+          <div class="val-desc">Transparence, honnêteté et éthique chrétienne dans toutes nos relations. Ce que nous sommes en privé, nous le sommes en public.</div>
+        </div>
+        <div class="val-card animate-up">
+          <div class="val-icon">🌱</div>
+          <div class="val-name">Croissance Continue</div>
+          <div class="val-desc">Apprentissage permanent et développement personnel tout au long de la vie. Un bâtisseur qui cesse d'apprendre cesse de bâtir.</div>
+        </div>
+        <div class="val-card animate-up">
+          <div class="val-icon">🎯</div>
+          <div class="val-name">Impact Social</div>
+          <div class="val-desc">Transformation positive des communautés par des actes concrets, mesurables et durables. Chaque bâtisseur est un agent de changement.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION 2040 -->
+  <section id="vision" style="background:linear-gradient(135deg, var(--dark), var(--royal)); position:relative; overflow:hidden;">
+    <div class="container" style="position:relative; z-index:1;">
+      <span class="section-eyebrow light">Engagement ferme</span>
+      <h2 class="section-title light">Vision 2040</h2>
+      <div class="divider"></div>
+      <p class="section-lead light" style="margin-bottom:48px;">
+        « Cette vision n'est pas un rêve lointain. C'est un engagement ferme que nous prenons devant Dieu et devant les hommes. »
+      </p>
+      <div class="vision-cards">
+        <div class="v-card animate-up">
+          <div class="v-card-num">1 000 000</div>
+          <div class="v-card-title">Bâtisseurs formés — objectif 2040</div>
+          <div class="v-card-desc">Des hommes et femmes équilibrés, autonomes et impactants, prêts à transformer leur société.</div>
+        </div>
+        <div class="v-card animate-up">
+          <div class="v-card-num">77 communes</div>
+          <div class="v-card-title">Ambition nationale à terme</div>
+          <div class="v-card-desc">Une base stratégique locale dans chaque commune — formation, entraide, prière, projets communautaires concrets.</div>
+        </div>
+        <div class="v-card animate-up">
+          <div class="v-card-num">🌍</div>
+          <div class="v-card-title">Au-delà des frontières</div>
+          <div class="v-card-desc">Une alliance appelée à essaimer partout où Dieu ouvre une porte — en Afrique et dans la diaspora francophone.</div>
+        </div>
+        <div class="v-card animate-up">
+          <div class="v-card-num">7</div>
+          <div class="v-card-title">Ministères en synergie</div>
+          <div class="v-card-desc">Prière, formation, protection, arts, entraide, affaires et finances, expansion — chaque dimension de la mission est couverte dès aujourd'hui.</div>
+        </div>
+      </div>
+      <div style="margin-top:40px; text-align:center;">
+        <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; color:rgba(255,255,255,0.8); max-width:600px; margin:0 auto 28px; line-height:1.7;">
+          « Des milliers de cellules communautaires — Assemblées de Maison pour un accompagnement de proximité de tous les membres »
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LÉGAL -->
+  <section style="background:var(--ivory);">
+    <div class="container">
+      <span class="section-eyebrow">Reconnaissance Officielle</span>
+      <h2 class="section-title">Statut Légal</h2>
+      <div class="divider"></div>
+      <div class="legal-box animate-up">
+        <div class="legal-icon">🏛️</div>
+        <div>
+          <h4>Association légalement reconnue — République du Bénin</h4>
+          <p>
+            ABBA est une association officiellement reconnue par l'État béninois conformément à la Loi n°2025-19 du 22 juillet 2025.
+            Récépissé N°2025/A084/MISP/DC/SG/DAI/C/SAC/SA délivré par le Ministère de l'Intérieur et de la Sécurité Publique, Direction de la Citoyenneté, Secrétariat Général, Direction des Affaires Intérieures.<br><br>
+            Cette reconnaissance officielle garantit la transparence, la légitimité et la pérennité de l'alliance et de toutes ses activités sur le territoire national et au-delà.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="container">
+      <span class="section-eyebrow light">Prêt ?</span>
+      <h2>Rejoins le mouvement.</h2>
+      <p>Tu as maintenant tout compris sur ABBA. La prochaine étape, c'est de faire partie de l'alliance.</p>
+      <div class="btn-group">
+        <a class="btn btn-primary btn-lg" href="rejoindre.html">Rejoindre ABBA</a>
+        <a class="btn btn-outline-light btn-lg" href="approche.html">Notre Approche →</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="abba-footer"></footer>
+
+<script src="images.js"></script>
+<script src="nav.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof ABBA_IMAGES !== 'undefined') {
+    document.getElementById('footer-logo').src = ABBA_IMAGES.logo;
+  }
+});
+</script>
+</body>
+</html>

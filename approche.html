@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notre Approche — L'Homme Fait | ABBA</title>
+<meta name="description" content="L'approche ABBA : 8 dimensions interconnectées pour former des hommes et femmes complets. Spirituelle, psychologique, physique, financière et plus encore.">
+<link rel="stylesheet" href="style'.css">
+<style>
+/* Constat */
+.constat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+.constat-card {
+  background: var(--white); border-radius: 4px; padding: 26px;
+  border-left: 3px solid var(--gold); box-shadow: var(--shadow-sm);
+}
+.constat-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.constat-card p  { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+.constat-card .constat-tag {
+  display:inline-block; background:var(--gold-pale); color:var(--gold);
+  font-size:0.68rem; font-weight:700; letter-spacing:0.07em;
+  text-transform:uppercase; padding:3px 10px; border-radius:100px; margin-bottom:10px;
+}
+.hl-link { color: var(--royal); font-weight: 600; font-size: 0.88rem; text-decoration: none; transition: gap 0.2s, color 0.2s; }
+.hl-link:hover { color: var(--gold); }
+
+/* Dimensions */
+.dim-intro {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+  margin-bottom: 64px;
+}
+.dim-wheel {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 14px;
+}
+.dw-item {
+  aspect-ratio: 1; border-radius: 6px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.25s; cursor: default;
+  padding: 10px;
+}
+.dw-item:hover { background: rgba(201,151,26,0.15); border-color: rgba(201,151,26,0.4); transform: scale(1.05); }
+.dw-icon { font-size: 1.6rem; margin-bottom: 6px; }
+.dw-label { font-size: 0.68rem; color: rgba(255,255,255,0.7); font-weight: 600; text-align: center; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Dimension detail cards */
+.dim-cards { display: flex; flex-direction: column; gap: 24px; }
+.dim-card {
+  background: var(--white); border-radius: 4px;
+  box-shadow: var(--shadow-sm); overflow: hidden;
+  display: grid; grid-template-columns: 90px 1fr;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.dim-card:hover { box-shadow: var(--shadow-md); transform: translateX(4px); }
+.dim-card-num {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  background: var(--royal); color: var(--white);
+  gap: 6px; padding: 20px 10px;
+}
+.dim-card-num .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 700; color: var(--gold-light); line-height: 1;
+}
+.dim-card-num .icon { font-size: 1.4rem; }
+.dim-card-body { padding: 22px 28px; }
+.dim-card-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--royal); margin-bottom: 6px; }
+.dim-card-body .dim-tag {
+  display: inline-block; background: var(--royal-soft); color: var(--royal);
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 100px; margin-bottom: 10px;
+}
+.dim-card-body p { font-size: 0.875rem; color: var(--muted); line-height: 1.72; margin-bottom: 10px; }
+.dim-card-body ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.dim-card-body ul li { font-size: 0.82rem; color: var(--text); display: flex; gap: 8px; align-items: flex-start; }
+.dim-card-body ul li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+
+/* Interdépendance */
+.interdep-box {
+  background: var(--gold-pale); border: 1px solid rgba(201,151,26,0.25);
+  border-radius: 4px; padding: 32px 40px; text-align: center;
+}
+.interdep-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--royal); margin-bottom: 10px; }
+.interdep-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; max-width: 580px; margin: 0 auto; }
+
+@media (max-width: 768px) {
+  .constat-grid { grid-template-columns: 1fr; }
+  .dim-intro { grid-template-columns: 1fr; }
+  .dim-wheel { grid-template-columns: repeat(4,1fr); }
+  .dim-card { grid-template-columns: 70px 1fr; }
+}
+@media (max-width: 480px) {
+  .dim-wheel { grid-template-columns: repeat(4,1fr); }
+  .dw-label { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav id="abba-nav"></nav>
+
+<main class="page-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span><span>Notre Approche</span></div>
+      <h1>Notre Approche :<br><span>L'Homme Fait</span></h1>
+      <p>Fondée sur Éphésiens 4:12-15 — Former des bâtisseurs équilibrés dans 8 dimensions essentielles et interconnectées de la vie humaine.</p>
+    </div>
+  </div>
+
+  <!-- LE CONSTAT -->
+  <section style="background:var(--white);">
+    <div class="container">
+      <span class="section-eyebrow">Pourquoi cette approche ?</span>
+      <h2 class="section-title">Des vies à moitié accomplies</h2>
+      <div class="divider"></div>
+      <p class="section-lead" style="margin-bottom:0;">
+        Beaucoup de chrétiens excellent dans un ou deux domaines mais échouent dans d'autres aspects tout aussi importants. Ce déséquilibre provient d'une vision fragmentée de la vie chrétienne — qui sépare le spirituel du pratique, la foi des finances, l'église de la société.
+      </p>
+      <div class="constat-grid animate-up">
+        <div class="constat-card"><span class="constat-tag">Profil</span><h4>🙏 Le Fervent</h4><p>Une vie de prière solide — dimension spirituelle forte. Mais aucune stratégie pour ses finances ou sa carrière : les dimensions financière et professionnelle restent fragiles.</p></div>
+        <div class="constat-card"><span class="constat-tag">Profil</span><h4>💼 L'Accompli</h4><p>Un poste, un revenu, une réputation — dimensions professionnelle et financière fortes. Mais un vide intérieur que le succès ne comble pas : les dimensions psychologique et spirituelle en souffrent.</p></div>
+        <div class="constat-card"><span class="constat-tag">Profil</span><h4>🧭 Le Stable</h4><p>Une vie confortable et sociale — dimensions financière et sociale fortes. Mais sans direction ni sens profond : la dimension spirituelle reste vide.</p></div>
+      </div>
+      <p style="text-align:center; margin-top:8px;">
+        <a class="hl-link" href="a-propos.html#portraits">Découvrir ces 3 profils en détail →</a>
+      </p>
+      <div class="verse-block animate-up" style="max-width:620px; margin-top: 32px;">
+        <p>« Dieu veut que ses enfants soient complets, équilibrés et prospères dans TOUS les domaines de la vie. C'est pourquoi ABBA existe. »</p>
+        <cite>2 Pierre 1:3 — Fondement de la conviction d'ABBA</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- LES 8 DIMENSIONS -->
+  <section style="background:linear-gradient(135deg, var(--dark), var(--royal)); overflow:hidden; position:relative;">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="dim-intro">
+        <div class="animate-up">
+          <span class="section-eyebrow light">L'approche holistique</span>
+          <h2 class="section-title light">Les 8 Dimensions<br>de l'Homme Fait</h2>
+          <div class="divider"></div>
+          <p class="section-lead light" style="margin-bottom:24px;">
+            Basée sur Éphésiens 4:12-15, notre vision de l'Homme Fait est celle d'un bâtisseur équilibré dans 8 dimensions essentielles. Une faiblesse dans l'une affecte toutes les autres — d'où la nécessité d'une approche globale.
+          </p>
+          <div class="verse-block" style="background:rgba(255,255,255,0.06); border-left-color:var(--gold);">
+            <p style="color:rgba(255,255,255,0.85);">« Afin de perfectionner les saints pour l'œuvre du ministère, pour l'édification du corps de Christ… »</p>
+            <cite>Éphésiens 4:12</cite>
+          </div>
+        </div>
+        <div class="dim-wheel animate-up">
+          <div class="dw-item"><span class="dw-icon">🙏</span><span class="dw-label">Spirituelle</span></div>
+          <div class="dw-item"><span class="dw-icon">🧠</span><span class="dw-label">Psychologique</span></div>
+          <div class="dw-item"><span class="dw-icon">💪</span><span class="dw-label">Physique</span></div>
+          <div class="dw-item"><span class="dw-icon">📚</span><span class="dw-label">Éducationnelle</span></div>
+          <div class="dw-item"><span class="dw-icon">🍽️</span><span class="dw-label">Subsistance</span></div>
+          <div class="dw-item"><span class="dw-icon">💼</span><span class="dw-label">Professionnelle</span></div>
+          <div class="dw-item"><span class="dw-icon">💰</span><span class="dw-label">Financière</span></div>
+          <div class="dw-item"><span class="dw-icon">🌍</span><span class="dw-label">Sociale</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÉTAIL DIMENSIONS -->
+  <section style="background:var(--ivory);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:48px;">
+        <span class="section-eyebrow">En détail</span>
+        <h2 class="section-title">Chaque dimension expliquée</h2>
+        <div class="divider center"></div>
+        <p class="section-lead center">Ce sont 8 domaines que nous travaillons ensemble, progressivement, au cours du Parcours Bâtisseur de 12 mois.</p>
+      </div>
+      <div class="dim-cards">
+
+        <div class="dim-card animate-up">
+          <div class="dim-card-num"><span class="num">01</span><span class="icon">🙏</span></div>
+          <div class="dim-card-body">
+            <span class="dim-tag">Fondation de toutes les autres</span>
+            <h3>Dimension Spirituelle</h3>
+            <p>La dimension spirituelle est le socle de tout l'édifice. Sans une relation authentique et vivante avec Dieu, toutes les autres dimensions restent fragiles. Chez ABBA, nous ne nous contentons pas d'une foi de façade — nous cultivons des disciples qui connaissent réellement Dieu.</p>
+            <ul>
+              <li>Vie de disciple enracinée dans la Parole de Dieu</li>
+              <li>Relation personnelle et intime avec Jésus-Christ</li>
+              <li>Vie remplie du Saint-Esprit et de ses dons</li>
+              <li>Compréhension du monde spirituel et du combat spirituel</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dim-card animate-up">
+          <div class="dim-card-num"><span class="num">02</span><span class="icon">🧠</span></div>
+          <div class="dim-card-body">
+            <span class="dim-tag">Guérison intérieure</span>
+            <h3>Dimension Psychologique</h3>
+            <p>Les blessures de l'âme sont souvent le frein invisible qui empêche les croyants de progresser. Rejet, abus, traumatismes, deuils non résolus — ABBA offre un espace de guérison intérieure et de restauration émotionnelle profonde.</p>
+            <ul>
+              <li>Identification et guérison des blessures intérieures</li>
+              <li>Processus de cure d'âme et restauration émotionnelle</li>
+              <li>Équilibre émotionnel et santé mentale chrétienne</li>
+              <li>Réconciliation avec son histoire personnelle</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dim-card animate-up">
+          <div class="dim-card-num"><span class="num">03</span><span class="icon">💪</span></div>
+          <div class="dim-card-body">
+            <span class="dim-tag">Temple du Saint-Esprit</span>
+            <h3>Dimension Physique</h3>
+            <p>Notre corps est le temple du Saint-Esprit — il mérite d'être traité avec sagesse et respect. Un bâtisseur épuisé, malade ou négligent avec sa santé sera limité dans sa mission. ABBA forme des chrétiens qui prennent soin de leur corps autant que de leur âme.</p>
+            <ul>
+              <li>Nutrition et hygiène de vie chrétienne</li>
+              <li>Gestion de la santé et prévention</li>
+              <li>Gestes de premiers secours et secourisme de base</li>
+              <li>Équilibre entre travail, repos et vie spirituelle</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dim-card animate-up">
+          <div class="dim-card-num"><span class="num">04</span><span class="icon">📚</span></div>
+          <div class="dim-card-body">
+            <span class="dim-tag">Développement intellectuel</span>
+            <h3>Dimension Éducationnelle</h3>
+            <p>L'apprentissage ne s'arrête pas à l'école. Un bâtisseur qui cesse d'apprendre cesse de grandir — et cesse d'impacter. ABBA cultive une culture de l'excellence intellectuelle, de la curiosité et du développement continu, au service de la mission.</p>
+            <ul>
+              <li>Apprentissage continu et autodidaxie méthodique</li>
+              <li>Formation biblique approfondie et discernement</li>
+              <li>Citoyenneté active — droits, devoirs et vie civique</li>
+              <li>Développement des compétences transversales</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dim-card animate-up">
+          <div class="dim-card-num"><span class="num">05</span><span class="icon">🍽️</span></div>
+          <div class="dim-card-body">
+            <span class="dim-tag">Sortir de la précarité</span>
+            <h3>Dimension Subsistance</h3>
+            <p>Il est difficile d'impacter le monde quand on ne sait pas comment subvenir à ses besoins fondamentaux. ABBA aide chaque bâtisseur à sortir de la précarité et à garantir ses besoins essentiels — logement, alimentation, sécurité — comme point de départ indispensable.</p>
+            <ul>
+              <li>Couverture des besoins fondamentaux en priorité</li>
+              <li>Stratégies concrètes pour sortir de la précarité</li>
+              <li>Gestion des ressources limitées avec sagesse</li>
+              <li>Construction d'une base stable pour soi et sa famille</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dim-card animate-up">
+          <div class="dim-card-num"><span class="num">06</span><span class="icon">💼</span></div>
+          <div class="dim-card-body">
+            <span class="dim-tag">Compétences & Service</span>
+            <h3>Dimension Professionnelle</h3>
+            <p>Dieu a donné à chacun des dons et des compétences qui doivent être mis au service de la société. ABBA aide chaque bâtisseur à identifier sa vocation professionnelle, à développer ses compétences et à s'insérer durablement dans la vie active.</p>
+            <ul>
+              <li>Identification des dons et compétences naturels</li>
+              <li>Développement des compétences professionnelles</li>
+              <li>Insertion professionnelle et création d'opportunités</li>
+              <li>Entrepreneuriat et création d'activité génératrice de revenus</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dim-card animate-up">
+          <div class="dim-card-num"><span class="num">07</span><span class="icon">💰</span></div>
+          <div class="dim-card-body">
+            <span class="dim-tag">Autonomie économique</span>
+            <h3>Dimension Financière</h3>
+            <p>L'argent n'est pas un sujet tabou dans la Bible — Dieu veut que ses enfants prospèrent. ABBA forme des bâtisseurs qui comprennent les principes bibliques de la gestion financière, épargnent avec méthode et avancent vers l'autonomie économique.</p>
+            <ul>
+              <li>Budget personnel et gestion des finances familiales</li>
+              <li>Épargne, investissement et principes de multiplication</li>
+              <li>Libéralité biblique — donner, gérer et multiplier</li>
+              <li>Autonomie économique et liberté financière</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dim-card animate-up">
+          <div class="dim-card-num"><span class="num">08</span><span class="icon">🌍</span></div>
+          <div class="dim-card-body">
+            <span class="dim-tag">Impact & Rayonnement</span>
+            <h3>Dimension Sociale</h3>
+            <p>Un bâtisseur formé est un bâtisseur déployé. La dimension sociale est la finalité de toutes les autres — impacter positivement sa famille, son église, sa communauté, sa commune et sa nation pour la gloire de Dieu.</p>
+            <ul>
+              <li>Leadership familial et impact sur le foyer</li>
+              <li>Service communautaire et transformation sociale</li>
+              <li>Engagement dans les structures locales et nationales</li>
+              <li>Mission et évangélisation dans son environnement naturel</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERDEPENDANCE -->
+  <section style="background:var(--white);">
+    <div class="container">
+      <div class="interdep-box animate-up">
+        <h3>L'Interdépendance des 8 Dimensions</h3>
+        <div class="divider center"></div>
+        <p>Ces 8 dimensions ne sont pas des cases indépendantes — elles forment un système vivant. Une faiblesse dans l'une affecte inévitablement les autres. Un homme financièrement précaire aura du mal à impacter socialement. Un homme spirituellement vide manquera de force pour construire. C'est pourquoi ABBA traite l'être humain dans sa totalité — comme Dieu l'a créé.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="container">
+      <span class="section-eyebrow light">Prêt à grandir ?</span>
+      <h2>Commence ton parcours vers l'Homme Fait.</h2>
+      <p>12 mois de formation, de transformation et de mise en action. Ta vie ne sera plus la même.</p>
+      <div class="btn-group">
+        <a class="btn btn-primary btn-lg" href="rejoindre.html">Rejoindre ABBA</a>
+        <a class="btn btn-outline-light btn-lg" href="parcours.html">Voir le Parcours →</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="abba-footer"></footer>
+<script src="images.js"></script>
+<script src="nav.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof ABBA_IMAGES !== 'undefined')
+    document.getElementById('footer-logo').src = ABBA_IMAGES.logo;
+});
+</script>
+</body>
+</html>
