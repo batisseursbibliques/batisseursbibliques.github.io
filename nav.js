@@ -150,7 +150,7 @@
           <div class="footer-col">
             <h5>Ressources</h5>
             <ul>
-              <li><a href="${prefix}blog/index.html">Blog & Actualités</a></li>
+              <li><a href="${prefix}index-1.html">Blog & Actualités</a></li>
               <li><a href="${prefix}ministeres.html">Les 7 Ministères</a></li>
             </ul>
           </div>
