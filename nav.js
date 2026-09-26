@@ -13,6 +13,7 @@
     { href: "approche.html", label: "Notre Approche" },
     { href: "ministeres.html", label: "Les Ministères" },
     { href: "parcours.html", label: "Parcours Bâtisseur" },
+    { href: "outils.html", label: "Nos Outils" },
     { href: "contact.html", label: "Contactez-nous" },
   ];
 
@@ -151,6 +152,7 @@
             <h5>Ressources</h5>
             <ul>
               <li><a href="${prefix}index-1.html">Blog & Actualités</a></li>
+              <li><a href="${prefix}outils.html">Nos Outils</a></li>
               <li><a href="${prefix}ministeres.html">Les 7 Ministères</a></li>
             </ul>
           </div>

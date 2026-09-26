@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos Outils — ABBA | Alliance des Bâtisseurs Bibliques en Action</title>
+<meta name="description" content="ABBA Life, l'application gratuite pour ta vie spirituelle, ton temps et tes finances — et l'Espace Membres, réservé aux Bâtisseurs.">
+<link rel="stylesheet" href="style'.css">
+<style>
+.outil-block { border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md); margin-bottom: 40px; }
+.outil-main { background: linear-gradient(135deg, var(--dark), var(--royal)); color: var(--white); padding: 56px 44px; }
+.outil-main .outil-tag { display:inline-block; background: rgba(201,151,26,0.15); color: var(--gold-light); border:1px solid rgba(201,151,26,0.4); padding: 5px 14px; border-radius: 100px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 18px; }
+.outil-main h2 { font-family:'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 14px; }
+.outil-main p { color: rgba(255,255,255,0.75); font-size: 1.05rem; line-height: 1.7; max-width: 640px; margin-bottom: 24px; }
+.outil-features { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom: 30px; }
+.outil-features li { display:flex; align-items:flex-start; gap:10px; font-size: 0.95rem; color: rgba(255,255,255,0.85); }
+.outil-features li .ico { color: var(--gold-light); font-size:1.1rem; line-height:1.3; }
+
+.outil-secondary { background: var(--ivory); padding: 44px; border: 1px solid var(--border); }
+.outil-secondary .outil-tag { display:inline-block; background: rgba(11,44,107,0.06); color: var(--royal); border:1px solid rgba(11,44,107,0.2); padding: 5px 14px; border-radius: 100px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 16px; }
+.outil-secondary h3 { font-family:'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--text); margin-bottom: 12px; }
+.outil-secondary p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; max-width: 560px; margin-bottom: 22px; }
+.outil-secondary .btn-group { flex-wrap: wrap; }
+
+@media (max-width: 700px) {
+  .outil-main, .outil-secondary { padding: 36px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav id="abba-nav"></nav>
+
+<main class="page-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span><span>Nos Outils</span></div>
+      <h1>Nos Outils <span>Numériques</span></h1>
+      <p>ABBA ne se limite pas à la formation — nous construisons aussi les outils concrets qui accompagnent chaque Bâtisseur, jour après jour.</p>
+    </div>
+  </div>
+
+  <!-- ABBA LIFE — MIS EN AVANT -->
+  <section style="background:var(--white); padding-top:64px;">
+    <div class="container">
+      <div class="outil-block outil-main animate-up">
+        <span class="outil-tag">✦ Ouvert à tous — 100% gratuit</span>
+        <h2>ABBA Life — ton compagnon quotidien</h2>
+        <p>Une application gratuite pour prendre en main ta vie spirituelle, ton temps et tes finances. Chaque jour, un même espace pour avancer dans l'équilibre que Dieu veut pour toi — que tu sois Bâtisseur ou simplement croyant en recherche d'une vie plus structurée.</p>
+        <ul class="outil-features">
+          <li><span class="ico">✓</span> Checklist spirituelle quotidienne — prière, lecture, déclaration du matin et du soir</li>
+          <li><span class="ico">✓</span> Suivi financier — dîme, épargne, générosité</li>
+          <li><span class="ico">✓</span> Accessible à tout croyant, sans condition d'adhésion à ABBA</li>
+        </ul>
+        <a class="btn btn-primary btn-lg" href="https://batisseursbibliques.org/abba-life/" target="_blank" rel="noopener">Essayer ABBA Life — gratuit →</a>
+      </div>
+
+      <!-- ESPACE MEMBRES — TEASER -->
+      <div class="outil-block outil-secondary animate-up">
+        <span class="outil-tag">🔒 Réservé aux membres</span>
+        <h3>Espace Membres</h3>
+        <p>Un espace privé où chaque Bâtisseur suit son parcours de formation, sa certification, et prend part à la vie de l'alliance. L'accès est réservé à ceux qui ont rejoint ABBA.</p>
+        <div class="btn-group">
+          <a class="btn btn-outline-dark btn-lg" href="https://abba-g.web.app/membres" target="_blank" rel="noopener">Se connecter (membres)</a>
+          <a class="btn btn-primary btn-lg" href="rejoindre.html">Comment devenir membre →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="container">
+      <span class="section-eyebrow light">Prêt à aller plus loin ?</span>
+      <h2>L'outil n'est qu'un début — le Parcours transforme.</h2>
+      <p>12 mois de formation, de transformation et de mise en action, avec ABBA Life comme compagnon quotidien.</p>
+      <div class="btn-group">
+        <a class="btn btn-primary btn-lg" href="rejoindre.html">Rejoindre ABBA</a>
+        <a class="btn btn-outline-light btn-lg" href="parcours.html">Voir le Parcours →</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="abba-footer"></footer>
+<script src="images.js"></script>
+<script src="nav.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof ABBA_IMAGES !== 'undefined')
+    document.getElementById('footer-logo').src = ABBA_IMAGES.logo;
+});
+</script>
+</body>
+</html>
